@@ -1,9 +1,14 @@
 const BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8010'
+const API_KEY = import.meta.env.VITE_API_KEY
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE_URL}${path}`, {
     ...init,
-    headers: { 'Content-Type': 'application/json', ...(init?.headers ?? {}) },
+    headers: {
+      'Content-Type': 'application/json',
+      ...(API_KEY ? { 'x-api-key': API_KEY } : {}),
+      ...(init?.headers ?? {}),
+    },
   })
   if (!res.ok) {
     const body = await res.json().catch(() => ({}))
@@ -291,7 +296,9 @@ export const findColleges = async (params: CollegeFinderParams): Promise<College
   if (params.limit != null) q.set('limit', String(params.limit))
   if (params.email) q.set('email', params.email)
 
-  const res = await fetch(`${BASE_URL}/api/colleges/search?${q}`)
+  const res = await fetch(`${BASE_URL}/api/colleges/search?${q}`, {
+    headers: API_KEY ? { 'x-api-key': API_KEY } : undefined,
+  })
   const data = await res.json()
   if (!res.ok) throw new Error(data.error ?? `Request failed: ${res.status}`)
   return data
