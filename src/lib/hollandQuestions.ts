@@ -1,0 +1,52 @@
+export type RiasecType = 'R' | 'I' | 'A' | 'S' | 'E' | 'C'
+
+export const QUESTIONS: [string, RiasecType][] = [
+  ['I enjoy working with tools, machines, or equipment.', 'R'],
+  ['I enjoy researching topics to deeply understand them.', 'I'],
+  ['I enjoy expressing myself through art, music, or writing.', 'A'],
+  ['I enjoy helping others work through their problems.', 'S'],
+  ['I enjoy leading or organizing group projects.', 'E'],
+  ['I enjoy organizing, filing, and maintaining records.', 'C'],
+  ['I like building or repairing things with my hands.', 'R'],
+  ['I like solving complex analytical or logical problems.', 'I'],
+  ['I like creating original ideas or works.', 'A'],
+  ['I like working in teams or collaborative settings.', 'S'],
+  ['I like persuading others or negotiating outcomes.', 'E'],
+  ['I like following established procedures and guidelines.', 'C'],
+  ['I prefer working outdoors or in physical environments.', 'R'],
+  ['I prefer reading scientific or technical material.', 'I'],
+  ['I prefer open-ended creative tasks over strict procedures.', 'A'],
+  ['I enjoy teaching, coaching, or guiding others.', 'S'],
+  ['I prefer taking charge and making key decisions.', 'E'],
+  ['I prefer tasks with clearly defined steps and expectations.', 'C'],
+  ['I enjoy athletic, mechanical, or hands-on physical activities.', 'R'],
+  ['I enjoy conducting experiments or in-depth investigations.', 'I'],
+  ['I enjoy imaginative and creative activities.', 'A'],
+  ['I like activities that involve direct service to others.', 'S'],
+  ['I enjoy competition and working toward ambitious goals.', 'E'],
+  ['I enjoy working with numbers, budgets, or spreadsheets.', 'C'],
+  ['I like tasks that have clear, concrete, tangible outcomes.', 'R'],
+  ['I like working with data and finding meaningful patterns.', 'I'],
+  ['I like attending or participating in cultural events.', 'A'],
+  ["I find it easy to understand and empathize with others' feelings.", 'S'],
+  ['I like starting new ventures or taking initiative.', 'E'],
+  ['I like detail-oriented, precise, and accurate work.', 'C'],
+  ['I feel comfortable operating machinery, vehicles, or equipment.', 'R'],
+  ['I feel comfortable working independently on difficult problems.', 'I'],
+  ['I often find unconventional or creative solutions to problems.', 'A'],
+  ['I enjoy volunteering or contributing to my community.', 'S'],
+  ['I feel comfortable presenting ideas or speaking in public.', 'E'],
+  ['I find satisfaction in meeting deadlines and staying organized.', 'C'],
+  ['I enjoy practical, hands-on problem solving.', 'R'],
+  ['I enjoy asking deep questions and seeking thorough explanations.', 'I'],
+  ['I value self-expression and originality in my work.', 'A'],
+  ['I prefer jobs where I interact with many different people daily.', 'S'],
+  ['I enjoy motivating or inspiring others to achieve results.', 'E'],
+  ['I prefer structured, predictable, and orderly work environments.', 'C'],
+]
+
+export const TYPE_NAMES: Record<RiasecType, string> = {
+  R: 'Realistic', I: 'Investigative', A: 'Artistic', S: 'Social', E: 'Enterprising', C: 'Conventional',
+}
+export const TYPE_ICONS: Record<RiasecType, string> = { R: '🔧', I: '🔬', A: '🎨', S: '🤝', E: '📈', C: '📋' }
+export const MAX_SCORE = 35

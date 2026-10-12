@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-ink: #16213e;
+  --color-ink-soft: #4b5773;
+  --color-brand: #2b4c8c;
+  --color-brand-hover: #1f3866;
+  --color-brand-tint: #e9eefa;
+  --color-accent: #e8863c;
+  --color-accent-tint: #fdf0e2;
+  --color-success: #2f7a4f;
+  --color-success-tint: #e7f4ec;
+  --color-danger: #b4432d;
+  --color-danger-tint: #fbe9e5;
+  --color-paper: #faf8f4;
+  --color-surface: #ffffff;
+  --color-border: #e7e2d8;
+}
+
+:root[data-theme="dark"] {
+  --color-paper: #12161f;
+  --color-surface: #1a2030;
+  --color-border: #2a3143;
+  --color-ink: #edeef4;
+  --color-ink-soft: #9aa3bd;
+  --color-brand-tint: #1d2740;
+  --color-accent-tint: #33251a;
+  --color-success-tint: #17281e;
+  --color-danger-tint: #2c1a16;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-paper: #12161f;
+    --color-surface: #1a2030;
+    --color-border: #2a3143;
+    --color-ink: #edeef4;
+    --color-ink-soft: #9aa3bd;
+    --color-brand-tint: #1d2740;
+    --color-accent-tint: #33251a;
+    --color-success-tint: #17281e;
+    --color-danger-tint: #2c1a16;
+  }
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-accent-tint);
+  color: var(--color-ink);
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
